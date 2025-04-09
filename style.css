@@ -1,0 +1,398 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --index: calc(1vw + 1vh);
+    --transition: cubic-bezier(.1, .7, 0, 1);
+}
+
+body{
+    background-color: #141414;
+}
+
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+h1{
+    text-align: center;
+    transform: translateY(-20px);
+    color: #ff0081;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    animation-name: beat-h1;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes beat-h1 {
+    0% {
+     transform: scale(1) translateY(-20px);
+    }
+    50% {
+     transform: scale(0.9) translateY(-20px);
+    }
+    100%{
+        transform: scale(1) translateY(-20px);
+    }
+}
+.items{
+    display: flex;
+    gap: 0.4rem;
+    perspective: calc(var(--index) * 35);
+}
+
+.item{
+    width: calc(var(--index) * 3);
+    height: calc(var(--index) * 12.5);
+    background-color: #222;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    filter: grayscale(1) brightness(.5);
+    transition: transform 1.25s var(--transition), filter 3s var(--transition), width 1.25s var(--transition);
+    will-change: transform, filter, rotateY, width;
+}
+
+.item::before, .item::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 20px;
+    right: calc(var(--index) * -1);
+}
+
+.item::after{
+    left: calc(var(--index) * -1);
+}
+
+.items .item:hover{
+    filter: inherit;
+    transform: translateZ(calc(var(--index) * 10));
+}
+
+/*Right*/
+
+.items .item:hover + *{
+    filter: inherit;
+    transform: translateZ(calc(var(--index) * 8.5)) rotateY(35deg);
+    z-index: -1;
+}
+
+.items .item:hover + * + *{
+    filter: inherit;
+    transform: translateZ(calc(var(--index) * 5.6)) rotateY(40deg);
+    z-index: -2;
+}
+
+.items .item:hover + * + * + *{
+    filter: inherit;
+    transform: translateZ(calc(var(--index) * 2.5)) rotateY(30deg);
+    z-index: -3;
+}
+
+.items .item:hover + * + * + * + *{
+    filter: inherit;
+    transform: translateZ(calc(var(--index) * .6)) rotateY(15deg);
+    z-index: -4;
+}
+
+
+/*Left*/
+
+.items .item:has( + :hover){
+    filter: inherit;
+    transform: translateZ(calc(var(--index) * 8.5)) rotateY(-35deg);
+}
+
+.items .item:has( + * + :hover){
+    filter: inherit;
+    transform: translateZ(calc(var(--index) * 5.6)) rotateY(-40deg);
+}
+
+.items .item:has( + * + * + :hover){
+    filter: inherit;
+    transform: translateZ(calc(var(--index) * 2.5)) rotateY(-30deg);
+}
+
+.items .item:has( + * + * + * + :hover){
+    filter: inherit;
+    transform: translateZ(calc(var(--index) * .6)) rotateY(-15deg);
+}
+
+.items .item:active, .items .item:focus {
+	width: 18vw;
+	filter: inherit;
+	z-index: 100;
+	transform: translateZ(calc(var(--index) * 10));
+    margin: 0 .45vw;
+}
+
+
+
+
+
+
+
+
+
+.heart {
+    margin: 0 auto; /* убрать строку, если не нужно центрировать  */
+    background-color: #ff0081;
+    height: 50px;
+    width: 50px;
+    transform: rotate(-45deg);
+    animation-name: beat-heart;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+   }
+   .heart:after {
+    background-color: #ff0081;
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0px;
+    left: 25px;
+   }
+   .heart:before {
+    background-color: #ff0081;
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 0px;
+   }
+   @keyframes beat-heart {
+    0% {
+     transform: scale(1) rotate(-45deg);
+    }
+    50% {
+     transform: scale(0.6) rotate(-45deg);
+    }
+   }
+
+
+
+
+
+
+
+
+   #stars { 
+    -webkit-box-shadow: 0px -46px 45px 21px rgba(241, 168, 232, 1);
+    -moz-box-shadow: 0px -46px 45px 21px rgba(241, 168, 232, 1);
+    box-shadow: 0px -46px 45px 21px rgba(241, 168, 232, 1);
+    background:#f1a8e8;
+    width:100%;
+    margin-top: 150px;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    box-shadow: #f1a8e8;
+    }
+    #stars:hover { 
+    background:#f1a8e8;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+.star {
+  transform-style: preserve-3d;
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  color: red;
+  pointer-events: none;
+}
+.star:before {
+  position: absolute;
+  content: '\2726';
+  color: inherit;
+  inset: 0;
+  box-shadow: 0 0 1em .5em #a3c2;
+  filter: drop-shadow(0 0 .5em white);
+  text-shadow: 0 0 1em #fff5;
+}
+
+.chooser {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  label{
+    text-align: center;
+    transition: .4s ease;
+    border: 1px solid #AEE1CD20;
+    padding: .5em 1em;
+    cursor: pointer;
+  }
+  input[type='radio'] {
+    display: none;
+    &:checked + label {
+      color: #FFE681;
+      border: 1px inset #AEE1CD90;
+    }
+    &:not(:checked) + label {
+        &:hover{
+        color: #D1CDDA;
+        box-shadow: inset 1px 1px #F9F6EF40;
+        background-color: #1f202050;
+      }
+      &:active {
+        box-shadow: inset -1px -1px #F9F6EF40;
+      }
+    }
+  }
+}
+
+
+
+.audio{
+    display: none;
+}
+
+.centerbtn{
+    display: flex;
+    justify-content: center;
+    transform: translateY(-150px);
+}
+
+.bubbly-button {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: inline-block;
+    font-size: 1em;
+    padding: 1em 2em;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #ff0081;
+    color: #fff;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+    box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
+  }
+  
+  .bubbly-button:focus {
+    outline: 0;
+  }
+  
+  .bubbly-button:before,
+  .bubbly-button:after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 140%;
+    height: 100%;
+    left: -20%;
+    z-index: -1000;
+    transition: all ease-in-out 0.5s;
+    background-repeat: no-repeat;
+  }
+  
+  .bubbly-button:before {
+    display: none;
+    top: -75%;
+    background-image:
+      radial-gradient(circle, #ff0081 20%, transparent 20%),
+      radial-gradient(circle, transparent 20%, #ff0081 20%, transparent 30%),
+      radial-gradient(circle, #ff0081 20%, transparent 20%),
+      radial-gradient(circle, #ff0081 20%, transparent 20%),
+      radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%),
+      radial-gradient(circle, #ff0081 20%, transparent 20%),
+      radial-gradient(circle, #ff0081 20%, transparent 20%),
+      radial-gradient(circle, #ff0081 20%, transparent 20%),
+      radial-gradient(circle, #ff0081 20%, transparent 20%);
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+  }
+  
+  .bubbly-button:after {
+    display: none;
+    bottom: -75%;
+    background-image:
+      radial-gradient(circle, #ff0081 20%, transparent 20%),
+      radial-gradient(circle, #ff0081 20%, transparent 20%),
+      radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%),
+      radial-gradient(circle, #ff0081 20%, transparent 20%),
+      radial-gradient(circle, #ff0081 20%, transparent 20%),
+      radial-gradient(circle, #ff0081 20%, transparent 20%),
+      radial-gradient(circle, #ff0081 20%, transparent 20%);
+    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+  }
+  
+  .bubbly-button:active {
+    transform: scale(0.9);
+    background-color: #e60073;
+    box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
+  }
+  
+  .bubbly-button.animate:before {
+    display: block;
+    animation: topBubbles ease-in-out 0.75s forwards;
+  }
+  
+  .bubbly-button.animate:after {
+    display: block;
+    animation: bottomBubbles ease-in-out 0.75s forwards;
+  }
+  
+  @keyframes topBubbles {
+    0% {
+      background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+    }
+    50% {
+      background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+    }
+    100% {
+      background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+      background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+  }
+  
+  @keyframes bottomBubbles {
+    0% {
+      background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+    }
+    50% {
+      background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+    }
+    100% {
+      background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+      background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+  }
+
+
+

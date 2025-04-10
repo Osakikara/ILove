@@ -41,8 +41,51 @@ body{
     align-items: center;
     justify-content: center;
     height: 80vh;
+    margin: 0 auto;
 }
+@media screen and (max-width: 720px) {
+  .wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 74.7%;
+    height: 60vh;
+    margin-bottom: 100px ;
+  }
+  .item{
+    width: calc(var(--index) * 1);
+    height: calc(var(--index) * 2);
+    background-color: #222;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    filter: grayscale(1) brightness(.5);
+    transition: transform 1.25s var(--transition), filter 3s var(--transition), width 1.25s var(--transition);
+    will-change: transform, filter, rotateY, width;
+  }
+  .item::before, .item::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 20px;
+    right: calc(var(--index) * -1);
+  }
+  .items .item:active, .items .item:focus {
+    width: 13vw;
+    filter: inherit;
+    z-index: 100;
+    transform: translateZ(calc(var(--index) * 10));
+      margin: 0 .25vw;
+  }
+  .items{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+    perspective: calc(var(--index) * 35);
+  }
+  
 
+}
 h1{
     text-align: center;
     transform: translateY(-20px);

@@ -10,9 +10,32 @@
 }
 
 body{
-    background-color: #141414;
+    background: url(img/Без\ имени-2.png);
+    
+    animation-name: back;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+    width: 100%;
+    background-size: 100%;
+    transition: all 1s;
 }
-
+@keyframes back {
+  0% {
+   background: url(img/Без\ имени-3.png);
+   width: 100%;
+    background-size: 100%;
+  }
+  50% {
+    background: url(img/Без\ имени-2.png);
+    width: 100%;
+    background-size: 100%;
+  }
+  100% {
+    background: url(img/Без\ имени-3.png);
+    width: 100%;
+    background-size: 100%;
+   }
+ }
 .wrapper{
     display: flex;
     align-items: center;
@@ -25,9 +48,11 @@ h1{
     transform: translateY(-20px);
     color: #ff0081;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 50px;
     animation-name: beat-h1;
     animation-duration: 1s;
     animation-iteration-count: infinite;
+    -webkit-text-stroke: 2px white;
 }
 
 @keyframes beat-h1 {

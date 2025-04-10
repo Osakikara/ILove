@@ -348,7 +348,7 @@ $('#stars').constellation({
 		width: 3
 	},
 	line: {
-		color: 'rgba(157, 188, 225, 1)'
+		color: 'rgb(255, 255, 255)'
 	},
 	radius: 250
 });

@@ -17,7 +17,7 @@ body{
     animation-iteration-count: infinite;
     width: 100%;
     background-size: 100%;
-    transition: all 1s;
+    
 }
 @keyframes back {
   0% {
@@ -268,6 +268,7 @@ h1{
     -o-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
     box-shadow: #f1a8e8;
+    position: absolute;
     }
     #stars:hover { 
     background:#f1a8e8;
@@ -463,4 +464,100 @@ h1{
   }
 
 
+  .clod{
+    
+    background: url(img/_21.png);
+    width: 500px;
+    height: 250px;
+    background-size: 100%;
+    position: absolute;
+    transform: translate(100px, 200px);
+    animation-name: clo;
+    animation-duration: 9s;
+    animation-iteration-count: infinite ;
+  }
+  @keyframes clo {
+    0% {
+      transform: translate(100px, 200px);
+    }
+    50% {
+      transform: translate(2200px, 200px);
+    }
+    100% {
+      transform: translate(100px, 200px);
+    }
+  }
+  .clod h4{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #d16d9f;
+    font-size: 35px;
+    text-align: center;
+    margin-top: 20%;
 
+  }
+
+
+  .clod1{
+    
+    background: url(img/_21.png);
+    width: 600px;
+    height: 300px;
+    background-size: 100%;
+    position: absolute;
+    transform: translate(500px, 200px);
+    animation-name: clo1;
+    animation-duration: 13s;
+    animation-iteration-count: infinite ;
+  }
+  @keyframes clo1 {
+    0% {
+      transform: translate(2100px, 600px);
+    }
+    50% {
+      transform: translate(0px, 600px);
+    }
+    100% {
+      transform: translate(2100px, 600px);
+    }
+  }
+  .clod1 h4{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #d16d9f;
+    font-size: 35px;
+    text-align: center;
+    margin-top: 20%;
+
+  }
+
+
+  .clod2{
+    
+    background: url(img/_21.png);
+    width: 600px;
+    height: 300px;
+    background-size: 100%;
+    position: absolute;
+
+    animation-name: clo2;
+    animation-duration: 10s;
+    animation-iteration-count: infinite ;
+  }
+  @keyframes clo2 {
+    0% {
+      transform: translate(-100px, 400px);
+    }
+    50% {
+      transform: translate(2000px, 400px);
+    }
+    100% {
+      transform: translate(-100px, 400px);
+    }
+  }
+  .clod2 h4{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #d16d9f;
+    font-size: 35px;
+    text-align: center;
+    margin-top: 20%;
+
+  }
